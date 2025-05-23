@@ -10,6 +10,7 @@ body {
     font-weight: 500;
     font-style: normal;
     background-color: white;
+    height: 100%;
 }
 
 button {
@@ -32,13 +33,22 @@ button {
 .content {
     display: flex;
     height: auto;
+    min-height: 100vh;
+    align-items: center;
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: 50% auto;
 
 }
 
 /* Card Section */
-
+.card {
+    position: relative;
+}
 .card-section {
     width: 40%;
+
+
 }
 
 .card-section picture {
@@ -47,7 +57,7 @@ button {
 }
 
 .card-front-wrapper {
-    position: absolute;
+    position: relative;
     top: 150px;
     left: 164px;
     width: 447px;
@@ -94,8 +104,8 @@ button {
 }
 
 .card-back-wrapper {
-    position: absolute;
-    bottom: 60px;
+    position: relative;
+    bottom: -60px;
     left: 260px;
     width: 447px;
     z-index: 1;
@@ -226,11 +236,17 @@ input.error {
     color: #adb5be;
 }
 
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1800px;
+    }
+}
 @media (max-width: 1024px) {
     .content {
         flex-direction: column;
         height: auto;
         min-height: unset;
+        background-size: 100% 50%;
     }
 
     .card-section,
@@ -250,8 +266,8 @@ input.error {
     }
 
     .card-back-wrapper {
-        top: 30px;
-        right: 150px;
+        top: -30px;
+        left: 50px;
     }
 
     .card-cvc {
@@ -260,7 +276,8 @@ input.error {
     }
 
     .card-front-wrapper {
-        top: 170px;
+        top: 20px;
+        left: 20px;
     }
 
     .form-content {
@@ -272,8 +289,18 @@ input.error {
         max-width: 400px;
         margin: 0 auto;
     }
+}
 
+@media screen and (max-width: 768px) {
+    .card-back-wrapper {
+        top: -30px;
+        left: 100px;
+    }
 
+    .card-front-wrapper {
+        top: 20px;
+        left: 50px;
+    }
 }
 
 @media (max-width: 376px) {
